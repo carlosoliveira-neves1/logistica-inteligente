@@ -1,6 +1,5 @@
-// Substitua URL absoluta por relativa
-// Trecho relevante: linha que faz POST /api/logistics/upload
-fetch('/api/logistics/upload', {
-  method: 'POST',
-  body: formData
-}).then(res => /* ... */)
+- fetch('http://127.0.0.1:5000/api/logistics/upload', {
++ fetch('/api/logistics/upload', {
+    method: 'POST',
+    body: formData
+  })

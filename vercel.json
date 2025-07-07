@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    // roda o seu Flask
+    { "src": "main.py", "use": "@vercel/python" },
+    // serve todos os arquivos da pasta static como estáticos
+    { "src": "static/**/*",  "use": "@vercel/static" }
+  ],
+  "routes": [
+    // toda rota /api vai pro Flask
+    { "src": "/api/(.*)", "dest": "main.py" },
+    // tudo o mais vai servir de static
+    { "src": "/(.*)",      "dest": "/static/$1" }
+  ]
+}
